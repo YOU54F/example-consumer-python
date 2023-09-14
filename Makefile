@@ -37,7 +37,7 @@ publish_pacts: .env
 ## =====================
 
 test: .env
-	pytest
+	PACT_LOG_LEVEL=$${PACT_LOG_LEVEL:-INFO} PACT_LOG_OUTPUT=$${PACT_LOG_OUTPUT:-STDOUT} pytest -rP
 
 ## =====================
 ## Deploy tasks
